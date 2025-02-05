@@ -3,6 +3,6 @@ def line():
 
 def menu_text():
     print(f'MENU\n'
-          f''
+          f'\n'
           f''
           f'')
