@@ -37,7 +37,7 @@ class Bank:
                             id_product INT(13) NOT NULL AUTO_INCREMENT PRIMARY KEY, 
                             name VARCHAR(255), 
                             manufacturer VARCHAR(255), 
-                            lot varchar(255),
+                            manuf_batch varchar(255),
                             exp_date date, 
                             entry_date date, 
                             price DECIMAL(10,2), 
