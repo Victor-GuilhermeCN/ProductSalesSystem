@@ -85,3 +85,4 @@ if __name__ == '__main__':
     store.create_table_product()
     store.create_table_invoice()
     store.create_table_fidelity()
+    
