@@ -4,5 +4,5 @@ def line():
 def menu_text():
     print(f'MENU\n'
           f'\n'
-          f''
-          f'')
+          f'\n'
+          f'\n')
