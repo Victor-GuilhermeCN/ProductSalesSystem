@@ -101,18 +101,6 @@ class Bank:
         except Exception as error_select_universal:
             print(error_select_universal)
 
-
-
-        """    if column == "*":
-                self.cursor.execute('SELECT %s FROM %s', (value, column))
-            else:
-                self.cursor.execute('SELECT %s FROM %s WHERE %s = %s')
-        except Exception as error_select_universal
-            print('Error in the search.')
-            print(error_select_universal)
-        else:
-            print()"""
-
 if __name__ == '__main__':
     store = Bank()
     #store.create_table_costumer()
