@@ -29,8 +29,9 @@ class Customer:
 
     def customer_update_address(self, snn, street, neighborhood, city, state, country, zipcode):
         try:
-            self.bank.cursor.execute('UPDATE customer SET street = %s, neighborhood = %s, city = %s, state = %s, country = %s, zipcode = %s WHERE snn = %s',
-                                     (street, neighborhood, city, state, country, zipcode, snn))
+            self.bank.cursor.execute(f'UPDATE customer SET street = {street}, neighborhood = {neighborhood},'
+                                     f' city = {city}, state = {state}, country = {country}, zipcode = {zipcode} '
+                                     f'WHERE snn = {snn}')
             self.bank.con.commit()
             self.bank.con.close()
         except Exception as error_update_adress:
@@ -39,9 +40,9 @@ class Customer:
         else:
             print('Updated successfully!')
 
-    def customer_update_phone(self, snn, phone):
+    def customer_update_phone(self, snn, phone: str):
         try:
-            self.bank.cursor.execute('UPDATE customer SET phone = %s WHERE snn = %s', (phone, snn))
+            self.bank.cursor.execute(f'UPDATE customer SET phone = {phone} WHERE snn = {snn}')
             self.bank.con.commit()
             self.bank.con.close()
         except Exception as error_update_phone:
@@ -56,4 +57,5 @@ if __name__ == '__main__':
     #c.customer_register(12, 'alex', '1990-05-15',  '123 Main St', 'Downtown', 'New York', 'NY', 'USA', 10001, '555-1234'  )
     #c.customer_delete(12)
     #c.customer_update_address(12, "Mainford", "Lambi", "Ohio","California", "USA", "50444")
-    c.customer_update_phone(12, "251-2583")
+    #c.customer_update_phone(12, "2512513")
+    c.customer_register(15, 'Willi', '1990-05-15',  '123 Main St', 'Downtown', 'New York', 'NY', 'USA', 10001, '555-1234'  )
