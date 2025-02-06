@@ -80,7 +80,7 @@ class Bank:
 
     def select_universal(self, table: str, column: str, identify):
         try:
-            self.cursor.execute(f'SELECT * FROM {table} WHERE {column} = %s', (identify))
+            self.cursor.execute(f'SELECT * FROM {table} WHERE {column} = {identify}')
             result = self.cursor.fetchall()
             if result:
                 for row in result:
