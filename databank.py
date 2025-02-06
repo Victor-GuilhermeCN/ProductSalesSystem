@@ -78,11 +78,36 @@ class Bank:
         else:
             print('Table Fidelity created successfully.')
 
+    def select_universal(self, table: str, column: str, identify):
+        try:
+            self.cursor.execute(f'SELECT * FROM {table} WHERE {column} = %s', (identify))
+            result = self.cursor.fetchall()
+            if result:
+                for row in result:
+                    print(f'SNN:{row[1]}, Name:{row[2]}, Birthday:{row[3]}, Address:{row[4]}, '
+                          f'{row[5]} - {row[6]}/{row[7]} - {row[8]}, Zipcode:{row[9]}'
+                          f'Phone:{row[10]}.')
+            else:
+                print('No costumer found.')
+        except Exception as error_select_universal:
+            print(error_select_universal)
+
+
+
+        """    if column == "*":
+                self.cursor.execute('SELECT %s FROM %s', (value, column))
+            else:
+                self.cursor.execute('SELECT %s FROM %s WHERE %s = %s')
+        except Exception as error_select_universal
+            print('Error in the search.')
+            print(error_select_universal)
+        else:
+            print()"""
 
 if __name__ == '__main__':
     store = Bank()
-    store.create_table_costumer()
-    store.create_table_product()
-    store.create_table_invoice()
-    store.create_table_fidelity()
-    
+    #store.create_table_costumer()
+    #store.create_table_product()
+    #store.create_table_invoice()
+    #store.create_table_fidelity()
+    store.select_universal('customer', 'snn', 12)
